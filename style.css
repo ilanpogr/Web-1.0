@@ -1,0 +1,341 @@
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+.navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#navbar a.active_top {
+    background-color: #2F4F4F;
+    color: white;
+}
+
+/* #navbar a.active {
+  background-color: #32CD32;
+  color: white;
+} */
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+    padding-top: 60px;
+}
+
+h4 {
+    margin-top: 65px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 65px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("https://pngimage.net/wp-content/uploads/2018/06/rick-and-morty-portal-png-4.png");
+    background-size: cover;
+}
+
+h1:before,
+h1:after {
+    content: '';
+    border-top: 3px solid;
+    border-color: cadetblue;
+    margin: 0 10px 0 0;
+    flex: 1 0 10px;
+}
+
+h1:after {
+    margin: 0 0 0 10px;
+}
+
+#gap_header {
+    height: 10px;
+}
+
+/* ABOUT ME */
+.grid-container {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+div.aboutMe_item0 {
+    width: 160px;
+    height: 272px;
+    background-image: url("https://ak1.picdn.net/shutterstock/videos/12296111/thumb/1.jpg?i10c=img.resize(height:160)");
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 10px;
+}
+
+div.photo_container {
+    text-align: center;
+    padding: 5px 10px;
+    text-shadow: 2px 2px gray;
+}
+
+.aboutMe_item0 {
+    grid-column-start: 4;
+    grid-row-start: 1;
+    margin-left: 50px;
+    /* grid-row-end:2; */
+}
+
+.aboutMe_item1 {
+    /* font-size: 14; */
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.aboutMe_item3 {
+    grid-column-start: 2;
+    grid-column-end: 5;
+}
+
+/* MY PHOTOS */
+
+.gallery {
+    display: grid;
+    background-color: #DCDCDC;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 4);
+    grid-gap: 5px;
+}
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery__item--1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.gallery__item--2 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.gallery__item--3 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 6;
+}
+
+.gallery__item--4 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+
+.gallery__item--5 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    grid-row-end: 9;
+}
+
+.gallery__item--6 {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 10;
+}
+
+.gallery__item--7 {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 8;
+}
+
+.gallery__item--8 {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 8;
+    grid-row-end: 11;
+}
+
+.gallery__item--9 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 9;
+    grid-row-end: 10;
+}
+
+.gallery__item--10 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 9;
+    grid-row-end: 11;
+}
+
+.gallery__item--11 {
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 10;
+    grid-row-end: 11;
+}
+
+.gallery__item--12 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 9;
+    grid-row-end: 11;
+}
+
+.gallery__item--13 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 10;
+    grid-row-end: 11;
+}
+
+.gallery__item--14 {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 10;
+    grid-row-end: 11;
+}
+
+/* QR CODE */
+
+
+/* Q&A */
+
+table.web_table {
+    font-family: "Arial Black", Gadget, sans-serif;
+    border: 2px solid #000000;
+    background-color: #4A4A4A;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table.web_table td, table.web_table th {
+    border: 1px solid #265E0D;
+    padding: 3px 2px;
+}
+
+table.web_table tbody td {
+    font-size: 13px;
+    color: #E6E6E6;
+}
+
+table.web_table tr:nth-child(even) {
+    background: #888888;
+}
+
+table.web_table thead {
+    background: #000000;
+    border-bottom: 1px solid #000000;
+}
+
+table.web_table thead th {
+    font-size: 15px;
+    font-weight: bold;
+    color: #E6E6E6;
+    text-align: center;
+    border-left: 1px solid #163708;
+}
+
+table.web_table thead th:first-child {
+    border-left: none;
+}
+
+/* CONTACT ME */
+.form-container {
+    padding: 5%;
+    background: #ffffff;
+    border: 9px solid #f2f2f2;
+    max-width: 520px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #2E8B57;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+textarea {
+    height: 200px;
+}
+
+
