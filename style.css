@@ -29,7 +29,9 @@
   background-color: #32CD32;
   color: white;
 } */
-
+html{
+    scroll-behavior: smooth;
+}
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
     position: fixed;
@@ -42,7 +44,7 @@
     padding-top: 60px;
 }
 
-h4 {
+h4.gap_header {
     margin-top: 65px;
     display: flex;
     width: 100%;
@@ -307,8 +309,25 @@ table.web_table thead th:first-child {
     margin: auto;
 }
 
-input, textarea {
+p.form-par
+{
+    text-align: center;
+}
+
+input, textarea
+{
     width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid #888888;
+    border-radius: 6px;
+}
+input:focus, textarea:focus {
+    border: 3px solid #555;
+}
+textarea
+{
+    height: 200px;
 }
 
 .button {
@@ -354,5 +373,7 @@ input, textarea {
 textarea {
     height: 200px;
 }
+
+
 
 
