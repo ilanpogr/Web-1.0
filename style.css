@@ -235,6 +235,23 @@ div.photo_container {
     grid-row-end: 11;
 }
 
+/* LIKE */
+
+div.like_header{
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+div.like_paragraph{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+}
+
+iframe.facebook_like{
+    margin-left: 110px;
+}
+
 /* QR CODE */
 
 
