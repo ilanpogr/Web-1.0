@@ -29,7 +29,9 @@
   background-color: #32CD32;
   color: white;
 } */
-
+html{
+    scroll-behavior: smooth;
+}
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
     position: fixed;

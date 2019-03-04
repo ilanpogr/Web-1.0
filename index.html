@@ -197,7 +197,8 @@
                 </li>
                 <br/>
                 <li>
-                    <b>Silence ain’t always golden:</b> Sometimes it’s not what you say that might be leading people not to
+                    <b>Silence ain’t always golden:</b> Sometimes it’s not what you say that might be leading people not
+                    to
                     like you, but rather what you don’t say. “Thank you,” “well done,” “I love you,” “tastes great,”
                     “how are you?”<br/>
                     these are all polite and caring day-to-day expressions that people expect to hear.
@@ -212,18 +213,20 @@
             </ul>
         </div>
     </div>
-    <br/>
     <center>
-            <p>
-                of course there are many more <u>but this is not the point</u>.
-                I'm representing nothing from the list above..<br/>
-                So please... Please.. Give me a like to my facebook page.
-            </p>
+        <p>
+            of course there are many more <u>but this is not the point</u>.
+            I'm representing nothing from the list above..<br/>
+            So please... Please.. Give me a like to my facebook page.
+        </p>
         <iframe class="facebook_like"
                 src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FTheRealJerrySmith%2F&width=200&layout=button_count&action=like&size=small&show_faces=true&share=false&height=21&appId"
                 width="200" height="21" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                 allowTransparency="true" allow="encrypted-media">
         </iframe>
+        <br/>
+        <br/>
+        <br/>
     </center>
 </section>
 
@@ -399,29 +402,42 @@
         <p>Please address questions about the Page, incorrent information, or even if you just wish to talk and be
             my friend..</p>
     </center>
+    <div w3-include-html="html-email-contact-form/formpage.html"></div>
     <br/>
-    <div class="container">
-        <div class="form-container">
-            <form method="post" id="reused_form">
-                <label for="name">Your Name:</label>
-                <input id="name" type="text" name="Name" required maxlength="50">
-                <label for="email">Email Address:</label>
-                <input id="email" type="email" name="Email" required maxlength="50">
-                <label for="message">Message:</label>
-                <textarea id="message" name="Message" rows="10" maxlength="6000" required></textarea>
-                <button class="button" type="submit"><span>Submit</span></button>
-            </form>
-            <div id="success_message" style="display:none">
-                <h3>Submitted the form successfully!</h3>
-                <p> We will get back to you soon. </p>
-            </div>
-            <div id="error_message" style="width:100%; height:100%; display:none; ">
-                <h3>Error</h3> Sorry there was an error sending your form.
-            </div>
-        </div>
-    </div>
 </section>
 
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            elmnt.innerHTML = this.responseText;
+                        }
+                        if (this.status == 404) {
+                            elmnt.innerHTML = "Page not found.";
+                        }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                return;
+            }
+        }
+    };
+</script>
 
 <script type="text/javascript">
     $(function () {
@@ -438,7 +454,6 @@
 </script>
 </body>
 
-
 <script>
     window.onscroll = function () {
         myFunction()
@@ -454,6 +469,10 @@
             navbar.classList.remove("sticky");
         }
     }
+</script>
+
+<script>
+    includeHTML();
 </script>
 
 </html>
