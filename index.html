@@ -400,44 +400,24 @@
     <br/>
     <center>
         <p>Please address questions about the Page, incorrent information, or even if you just wish to talk and be
-            my friend..</p>
+            my friend..
+        </p>
     </center>
-    <div w3-include-html="html-email-contact-form/formpage.html"></div>
+    <div class="form-container">
+        <form action="mailto:assignment0_internetprogrammingenvironments@alpha-web.net" method="post" enctype="text/plain">
+            <label for="name">Your Name:</label>
+            <input id="name" type="text" name="Name" required maxlength="50">
+            <label for="email">Email Address:</label>
+            <input id="email" type="email" name="Email" required maxlength="50">
+            <label for="message">Message:</label>
+            <textarea id="message" name="Message" rows="10" maxlength="6000" required></textarea>
+            <button class="button" type="submit" value="send"><span>Submit</span></button>
+        </form>
+    </div>
+
+
     <br/>
 </section>
-
-<script>
-    function includeHTML() {
-        var z, i, elmnt, file, xhttp;
-        /*loop through a collection of all HTML elements:*/
-        z = document.getElementsByTagName("*");
-        for (i = 0; i < z.length; i++) {
-            elmnt = z[i];
-            /*search for elements with a certain atrribute:*/
-            file = elmnt.getAttribute("w3-include-html");
-            if (file) {
-                /*make an HTTP request using the attribute value as the file name:*/
-                xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState == 4) {
-                        if (this.status == 200) {
-                            elmnt.innerHTML = this.responseText;
-                        }
-                        if (this.status == 404) {
-                            elmnt.innerHTML = "Page not found.";
-                        }
-                        /*remove the attribute, and call this function once more:*/
-                        elmnt.removeAttribute("w3-include-html");
-                        includeHTML();
-                    }
-                }
-                xhttp.open("GET", file, true);
-                xhttp.send();
-                return;
-            }
-        }
-    };
-</script>
 
 <script type="text/javascript">
     $(function () {
@@ -469,10 +449,6 @@
             navbar.classList.remove("sticky");
         }
     }
-</script>
-
-<script>
-    includeHTML();
 </script>
 
 </html>
