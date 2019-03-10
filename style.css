@@ -121,6 +121,7 @@ div.photo_container {
 .aboutMe_item3 {
     grid-column-start: 2;
     grid-column-end: 5;
+    grid-auto-rows: auto;
 }
 
 /* MY PHOTOS */
@@ -129,7 +130,7 @@ div.photo_container {
     display: grid;
     background-color: #DCDCDC;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 4);
+    grid-template-rows: repeat(8, 5vw);
     grid-gap: 5px;
 }
 
